@@ -1,0 +1,77 @@
+<ion-content>
+
+
+    <ion-img src="../../assets/back.PNG"></ion-img>
+
+    <div class="btn-back">
+        <ion-chip outline="true" color="white" (click)="dismissModal()">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            <ion-label>Volver</ion-label>
+        </ion-chip>
+    </div>
+
+    <div class="headertext">
+        <h1>Registar cuentas corrientes</h1>
+    </div>
+
+    <form [formGroup]="ValidationFormUSer">
+        <ion-list>
+            <div class="email">
+                <ion-item>
+                    <ion-label position="floating">Alias</ion-label>
+                    <ion-input name="names" type="text" formControlName="profileNames1" [(ngModel)]="alias">
+                    </ion-input>
+                </ion-item>
+                <div>
+                    <ng-container *ngFor="let validation of validationMessages.profileNames1">
+                        <div class="error_message" *ngIf="ValidationFormUSer.get('profileNames1').hasError(validation.type) && (ValidationFormUSer.get('profileNames1').dirty || ValidationFormUSer.get('profileNames1').touched)">
+                            {{validation.message}}
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="email">
+                <ion-item>
+                    <ion-label position="floating">Entidad Bancaria</ion-label>
+                    <ion-input name="document" type="text" formControlName="profileDocument1" [(ngModel)]="entbank">
+                    </ion-input>
+                </ion-item>
+                <div>
+                    <ng-container *ngFor="let validation of validationMessages.profileDocument1">
+                        <div class="error_message" *ngIf="ValidationFormUSer.get('profileDocument1').hasError(validation.type) && (ValidationFormUSer.get('profileDocument1').dirty || ValidationFormUSer.get('profileDocument1').touched)">
+                            {{validation.message}}
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="email">
+                <ion-item>
+                    <ion-label position="floating">moneda</ion-label>
+                    <ion-input name="town" type="text" formControlName="profileTown1" [(ngModel)]="moneda">
+                    </ion-input>
+                </ion-item>
+                <div>
+                    <ng-container *ngFor="let validation of validationMessages.profileTown1">
+                        <div class="error_message" *ngIf="ValidationFormUSer.get('profileTown1').hasError(validation.type) && (ValidationFormUSer.get('profileTown1').dirty || ValidationFormUSer.get('profileTown1').touched)">
+                            {{validation.message}}
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <ion-item>
+                <ion-label position="stacked">Número de la cuenta</ion-label>
+                <ion-input disabled="true" placeholder="{{ncuenta}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">identificación del titular</ion-label>
+                <ion-input disabled="true" placeholder="{{identificador}}"></ion-input>
+            </ion-item>
+
+
+            <div class="footer">
+                <ion-button (click)="save()" expand="full" shape="round" fill="solid" color="primary" [disabled]="!ValidationFormUSer.valid">Registrar</ion-button>
+            </div>
+        </ion-list>
+    </form>
+</ion-content>

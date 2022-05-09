@@ -1,0 +1,71 @@
+.headertext {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #004481
+}
+
+.subtext {
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.boxPassword {
+    width: 100%;
+}
+
+.btn-register {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.btn-login {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.bottom {
+    width: 100%;
+    position: relative;
+}
+
+.password_forgot {
+    margin-top: 7%;
+    margin-bottom: 4%;
+    width: 98%;
+    text-align: right;
+    font-size: 12px;
+    margin-right: 10%;
+}
+
+.email {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.password {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.error_message {
+    color: red;
+    font-size: 11px;
+}
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer {
+    margin-top: 20%;
+}
+
+.btn-back {
+    color: white;
+    position: absolute;
+    top: 2%;
+}

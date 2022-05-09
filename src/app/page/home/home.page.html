@@ -1,0 +1,140 @@
+<ion-header class="ion-no-border">
+    <ion-img src="../../../assets/background.svg"></ion-img>
+    <div class="btn-back">
+        <ion-chip outline="true" color="white" (click)="logout()">
+            <ion-label>salir</ion-label>
+            <ion-icon name="exit"></ion-icon>
+        </ion-chip>
+    </div>
+    <div class="center">
+        <ion-label>
+            <h1>Hola,</h1>
+            <h2>{{names}}</h2>
+        </ion-label>
+    </div>
+
+    <div class="subheader">
+        <ion-label>
+            <h2>Que deseas hacer hoy?</h2>
+        </ion-label>
+    </div>
+
+
+</ion-header>
+
+<ion-content class="background">
+
+    <div class="container">
+        <div class="fixed">
+            <div class="padding" (click)="crearcuenta()">
+                <div class="container1">
+                    <div class="containericon">
+                        <ion-icon name="people" style="width: 30px; height: 30px; margin-top: 2%;"></ion-icon>
+                    </div>
+                    <div class="containertext">
+                        <label color="dark">cuenta ahorro</label>
+                    </div>
+                </div>
+            </div>
+            <div class="padding" (click)="crearcuentacorriente()">
+                <div class="container1">
+                    <div class="containericon">
+                        <ion-icon name="people" style="width: 30px; height: 30px; margin-top: 2%;"></ion-icon>
+                    </div>
+                    <div class="containertext2">
+                        <label color="dark">cuenta corriente</label>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="padding" (click)="transferencia()">
+                <div class="container1">
+                    <div class="containericon">
+                        <ion-icon name="card" style="width: 30px; height: 30px;margin-top: 2%;"></ion-icon>
+                    </div>
+                    <div class="containertext">
+                        <label color="dark">Registar terceros</label>
+                    </div>
+                </div>
+            </div>
+            <div class="padding" (click)="logout()">
+                <div class="container1">
+                    <div class="containericon">
+                        <ion-icon name="wallet" style="width: 30px; height: 30px;margin-top: 2%;"></ion-icon>
+                    </div>
+                    <div class="containertext">
+                        <label color="dark">Traferencias a terceros</label>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="padding" (click)="modalcanqr()">
+                <div class="container1">
+                    <div class="containericon">
+                        <ion-icon name="qr-code" style="width: 30px; height: 30px;margin-top: 2%;"></ion-icon>
+                    </div>
+                    <div class="containertext">
+                        <label color="dark">Generar Codigo QR</label>
+                    </div>
+                </div>
+            </div>
+            <div class="padding" (click)="transferencia()">
+                <div class="container1">
+                    <div class="containericon">
+                        <ion-icon name="qr-code" style="width: 30px; height: 30px;margin-top: 2%;"></ion-icon>
+                    </div>
+                    <div class="containertext">
+                        <label color="dark">Leer Codigo QR</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="slides ion-margin-bottom">
+
+        <div class="divcorriente">
+            <h3>Cuentas corrientes</h3>
+        </div>
+        <div class="fixed">
+            <div *ngFor="let cuentaCorriente of cuentaCorriente" (click)="modalcuentaa(cuentaAhorro.keys)">
+                <div class="credit-card">
+                    <div class="credit-card visa selectable">
+                        <div class="credit-card-last4">
+                            {{cuentaCorriente.cuenta}}
+                        </div>
+                        <br><br>
+                        <div class="credit-card-expiry"> saldo: $ {{cuentaCorriente.saldo}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divcorriente">
+            <h3>Cuentas de ahorro</h3>
+        </div>
+
+        <div class="fixed">
+            <div *ngFor="let cuentaAhorro of cuentaAhorro" (click)="modalcuentac(cuentaCorriente.keys)">
+                <div class=" credit-card ">
+                    <div class="credit-card mastercard selectable ">
+                        <div class="credit-card-last4 ">
+                            {{cuentaAhorro.cuenta}}
+                        </div>
+                        <br><br>
+                        <div class="credit-card-expiry "> saldo: $ {{cuentaAhorro.saldo}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</ion-content>

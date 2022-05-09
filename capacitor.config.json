@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "BankCR",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
