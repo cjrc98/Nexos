@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "@awesome-cordova-plugins/barcode-scanner": "^5.39.1",
+    "@awesome-cordova-plugins/firebase-analytics": "^5.43.0",
     "@capacitor/app": "1.1.0",
     "@capacitor/core": "3.4.1",
     "@capacitor/haptics": "1.1.4",
@@ -30,6 +31,7 @@
     "@ionic-native/barcode-scanner": "^5.36.0",
     "@ionic/angular": "^6.0.0",
     "cordova-android": "10.1.2",
+    "cordova-plugin-firebase-analytics": "^6.1.0",
     "firebase": "^9.6.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
@@ -52,6 +54,12 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^5.0.0",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "2.4.2",
+    "cordova-support-android-plugin": "~1.0.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -72,7 +80,20 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "phonegap-plugin-barcodescanner": {}
-    }
+      "phonegap-plugin-barcodescanner": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-firebase-analytics": {
+        "ANALYTICS_COLLECTION_ENABLED": "true",
+        "AUTOMATIC_SCREEN_REPORTING_ENABLED": "true",
+        "ANDROID_FIREBASE_ANALYTICS_VERSION": "19.0.+"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
